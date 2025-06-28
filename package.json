@@ -93,6 +93,7 @@
     "range-parser": "^1.2.1",
     "raw-body": "^3.0.0",
     "readdirp": "^3.6.0",
+    "reflect-metadata": "^0.2.2",
     "router": "^2.2.0",
     "safe-buffer": "^5.2.1",
     "safer-buffer": "^2.1.2",
@@ -111,6 +112,7 @@
     "toidentifier": "^1.0.1",
     "touch": "^3.1.1",
     "ts-node": "^10.9.2",
+    "tsyringe": "^4.10.0",
     "type-is": "^2.0.1",
     "undefsafe": "^2.0.5",
     "undici-types": "^7.8.0",
@@ -121,7 +123,7 @@
     "yn": "^3.1.1"
   },
   "scripts": {
-    "dev": "ts-node-dev --respawn server/index.ts",
+    "dev": "ts-node-dev --respawn server/main/server.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },
