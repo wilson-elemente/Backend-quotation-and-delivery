@@ -23,3 +23,5 @@ app.use((err: any, _req: express.Request, res: express.Response, _next: express.
 app.listen(PORT, () => {
   console.log(`Servidor listo en http://localhost:${PORT}`);
 });
+
+export { app, container }; // Export app and container for testing or further configuration
