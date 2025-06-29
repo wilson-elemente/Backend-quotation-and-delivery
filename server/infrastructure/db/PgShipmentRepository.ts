@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import { injectable } from 'tsyringe';
 
 dotenv.config();
-const pool = new Pool({
+export const pool = new Pool({
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     user: process.env.POSTGRES_USER,
@@ -43,13 +43,13 @@ export class PgShipmentRepository implements ShipmentRepository {
             r.user_id,
             r.origin,
             r.destination,
-            r.weight_kg,
-            r.length_cm,
-            r.width_cm,
-            r.height_cm,
-            r.volumetric_weight,
-            r.chargeable_weight,
-            r.quoted_price_cents,
+            parseFloat(r.weight_kg),
+            parseFloat(r.length_cm),
+            parseFloat(r.width_cm),
+            parseFloat(r.height_cm),
+            parseFloat(r.volumetric_weight),
+            parseFloat(r.chargeable_weight),
+            parseInt(r.quoted_price_cents, 10),
             r.status,
             new Date(r.created_at)
         );
@@ -68,13 +68,13 @@ export class PgShipmentRepository implements ShipmentRepository {
             r.user_id,
             r.origin,
             r.destination,
-            r.weight_kg,
-            r.length_cm,
-            r.width_cm,
-            r.height_cm,
-            r.volumetric_weight,
-            r.chargeable_weight,
-            r.quoted_price_cents,
+            parseFloat(r.weight_kg),
+            parseFloat(r.length_cm),
+            parseFloat(r.width_cm),
+            parseFloat(r.height_cm),
+            parseFloat(r.volumetric_weight),
+            parseFloat(r.chargeable_weight),
+            parseInt(r.quoted_price_cents, 10),
             r.status,
             new Date(r.created_at)
         ));
@@ -94,13 +94,13 @@ export class PgShipmentRepository implements ShipmentRepository {
             r.user_id,
             r.origin,
             r.destination,
-            r.weight_kg,
-            r.length_cm,
-            r.width_cm,
-            r.height_cm,
-            r.volumetric_weight,
-            r.chargeable_weight,
-            r.quoted_price_cents,
+            parseFloat(r.weight_kg),
+            parseFloat(r.length_cm),
+            parseFloat(r.width_cm),
+            parseFloat(r.height_cm),
+            parseFloat(r.volumetric_weight),
+            parseFloat(r.chargeable_weight),
+            parseInt(r.quoted_price_cents, 10),
             r.status,
             new Date(r.created_at)
         );
