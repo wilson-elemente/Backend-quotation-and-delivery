@@ -1,5 +1,3 @@
-// server/__tests__/shipment.integration.test.ts
-
 import request from 'supertest';
 import app from '../main/server';
 import { pool as pgPool } from '../infrastructure/db/PgShipmentRepository';
