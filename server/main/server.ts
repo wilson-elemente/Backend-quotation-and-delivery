@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import quoteRoutes from '../interfaces/routes/quote.route';
 import authRoutes from '../interfaces/routes/auth.route';
+import shipmentRoutes from '../interfaces/routes/shipment.route';
 import { container } from 'tsyringe';
 
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(express.json());
 // Montar rutas
 app.use('/quote', quoteRoutes);
 app.use('/auth', authRoutes);
+app.use('/shipment', shipmentRoutes);
 
 // Error handler
 app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
@@ -21,7 +23,6 @@ app.use((err: any, _req: express.Request, res: express.Response, _next: express.
 });
 
 if (require.main === module) {
-  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`Servidor listo en http://localhost:${PORT}`);
   });
