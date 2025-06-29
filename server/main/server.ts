@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import quoteRoutes from '../interfaces/routes/quote.route';
 import authRoutes from '../interfaces/routes/auth.route';
 import shipmentRoutes from '../interfaces/routes/shipment.route';
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './swagger';
 import { container } from 'tsyringe';
 
 dotenv.config();
@@ -15,6 +17,10 @@ app.use(express.json());
 app.use('/quote', quoteRoutes);
 app.use('/auth', authRoutes);
 app.use('/shipment', shipmentRoutes);
+
+
+// Swagger
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Error handler
 app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
