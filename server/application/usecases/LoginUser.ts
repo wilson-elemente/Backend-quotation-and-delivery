@@ -1,6 +1,6 @@
 import { LoginUserDTO } from '../dtos/LoginUserDTO';
 import { UserRepository } from '../../domain/repositories/UserRepository';
-import { TokenService } from '../ports/TokenService';
+import { TokenService } from '../../domain/repositories/TokenService';
 import bcrypt from 'bcrypt';
 import { DomainError } from '../../domain/errors/DomainError';
 import { injectable, inject } from 'tsyringe';
