@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
-import { validateReq } from '../../middleware/validate';
+import { validateReq } from '../middleware/validate';
 import { Request, Response, NextFunction } from 'express';
 import { container } from '../../main/container';
 import { QuoteController } from '../controllers/QuoteController';
-import { authenticate } from '../../middleware/middleware';
+import { authenticate } from '../middleware/middleware';
 
 const router = Router();
 const ctrl = container.resolve<QuoteController>(QuoteController);

@@ -1,5 +1,5 @@
 import { RegisterUserDTO } from '../dtos/RegisterUserDTO';
-import { UserRepository } from '../ports/UserRepository';
+import { UserRepository } from '../../domain/repositories/UserRepository';
 import bcrypt from 'bcrypt';
 import { DomainError } from '../../domain/errors/DomainError';
 import { injectable, inject } from 'tsyringe';

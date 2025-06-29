@@ -1,4 +1,4 @@
-import { TariffRepository } from '../../application/ports/TariffRepository';
+import { TariffRepository } from '../../domain/repositories/TariffRepository';
 import { Tariff } from '../../domain/entities/Tariff';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';

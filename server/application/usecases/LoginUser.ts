@@ -1,5 +1,5 @@
 import { LoginUserDTO } from '../dtos/LoginUserDTO';
-import { UserRepository } from '../ports/UserRepository';
+import { UserRepository } from '../../domain/repositories/UserRepository';
 import { TokenService } from '../ports/TokenService';
 import bcrypt from 'bcrypt';
 import { DomainError } from '../../domain/errors/DomainError';
