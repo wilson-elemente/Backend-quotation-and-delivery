@@ -1,13 +1,13 @@
 import 'reflect-metadata';
 import { container } from 'tsyringe';
-import { UserRepository } from '../application/ports/UserRepository';
+import { UserRepository } from '../domain/repositories/UserRepository';
 import { TokenService } from '../application/ports/TokenService';
 import { PgUserRepository } from '../infrastructure/db/PgUserRepository';
 import { JwtTokenService } from '../infrastructure/jwt/JwtTokenService';
 import { RegisterUser } from '../application/usecases/RegisterUser';
 import { LoginUser } from '../application/usecases/LoginUser';
 import { PgTariffRepository } from '../infrastructure/db/PgTariffRepository';
-import { TariffRepository } from '../application/ports/TariffRepository';
+import { TariffRepository } from '../../server/domain/repositories/TariffRepository';
 import { Tariff } from '../domain/entities/Tariff';
 import { CalculateQuote } from '../application/usecases/CalculateQuote';
 

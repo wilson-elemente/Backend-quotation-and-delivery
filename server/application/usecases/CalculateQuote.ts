@@ -1,6 +1,6 @@
 import { QuoteRequestDTO } from '../dtos/QuoteRequestDTO';
 import { QuoteResponseDTO } from '../dtos/QuoteResponseDTO';
-import { TariffRepository } from '../ports/TariffRepository';
+import { TariffRepository } from '../../domain/repositories/TariffRepository';
 import { Tariff } from '../../domain/entities/Tariff';
 import { DomainError } from '../../domain/errors/DomainError';
 import { injectable, inject } from 'tsyringe';

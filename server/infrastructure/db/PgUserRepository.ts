@@ -1,6 +1,6 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
-import { UserRepository } from '../../application/ports/UserRepository';
+import { UserRepository } from '../../domain/repositories/UserRepository';
 import { User } from '../../domain/entities/User';
 
 dotenv.config();
