@@ -10,6 +10,10 @@ import { JwtTokenService } from '../infrastructure/jwt/JwtTokenService';
 import { RegisterUser } from '../application/usecases/RegisterUser';
 import { LoginUser } from '../application/usecases/LoginUser';
 import { PgTariffRepository } from '../infrastructure/db/PgTariffRepository';
+import { RedisPublisherImpl } from '../infrastructure/redis/RedisPublisherImpl';
+import { ChangeShipmentStatus } from '../application/usecases/ChangeShipmentStatus';
+import { PgStatusHistoryRepository } from '../infrastructure/db/PgStatusHistoryRepository';
+import { RedisPublisher } from '../application/ports/RedisPublisher';
 import { TariffRepository } from '../../server/domain/repositories/TariffRepository';
 import { Tariff } from '../domain/entities/Tariff';
 import { CalculateQuote } from '../application/usecases/CalculateQuote';
@@ -24,6 +28,9 @@ container.register<UserRepository>('UserRepository', { useClass: PgUserRepositor
 container.register<TokenService>('TokenService', { useClass: JwtTokenService });
 container.register<TariffRepository>('TariffRepository', { useClass: PgTariffRepository });
 container.register<PgShipmentRepository>('ShipmentRepository', { useClass: PgShipmentRepository });
+container.register<RedisPublisher>('RedisPublisher', { useClass: RedisPublisherImpl });
+container.register<PgStatusHistoryRepository>('StatusHistoryRepository', { useClass: PgStatusHistoryRepository });
+
 
 // Casos de uso
 container.register('RegisterUser', { useClass: RegisterUser });
@@ -31,6 +38,7 @@ container.register('LoginUser', { useClass: LoginUser });
 container.register('CalculateQuote', { useClass: CalculateQuote });
 container.register<ListShipments>('ListShipments', { useClass: ListShipments });
 container.register<CreateShipment>('CreateShipment', { useClass: CreateShipment });
+container.register<ChangeShipmentStatus>('ChangeShipmentStatus', { useClass: ChangeShipmentStatus });
 
 
 // Controlador
