@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { container } from 'tsyringe';
 import { UserRepository } from '../domain/repositories/UserRepository';
-import { TokenService } from '../application/ports/TokenService';
+import { TokenService } from '../domain/repositories/TokenService';
 import { PgUserRepository } from '../infrastructure/db/PgUserRepository';
 import { JwtTokenService } from '../infrastructure/jwt/JwtTokenService';
 import { RegisterUser } from '../application/usecases/RegisterUser';

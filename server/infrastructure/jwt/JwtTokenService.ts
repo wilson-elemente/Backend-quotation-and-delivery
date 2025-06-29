@@ -1,6 +1,6 @@
 import jwt, { Secret, SignOptions } from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { TokenService } from '../../application/ports/TokenService';
+import { TokenService } from '../../domain/repositories/TokenService';
 
 dotenv.config();
 
