@@ -105,4 +105,13 @@ export class PgShipmentRepository implements ShipmentRepository {
             new Date(r.created_at)
         );
     }
+
+    async updateStatus(shipmentId: number, status: string): Promise<void> {
+    await pool.query(
+      `UPDATE shipments
+         SET status = $1
+       WHERE id = $2`,
+      [status, shipmentId]
+    );
+  }
 }

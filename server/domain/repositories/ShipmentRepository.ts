@@ -5,4 +5,5 @@ export interface ShipmentRepository {
   create(userId: number, data: RegisterShipmentDTO): Promise<Shipment>;
   findByUser(userId: number): Promise<Shipment[]>;
   findById(id: number): Promise<Shipment | null>;
+  updateStatus(id: number, status: string): Promise<void>;
 }

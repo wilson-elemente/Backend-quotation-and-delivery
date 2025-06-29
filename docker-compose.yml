@@ -11,5 +11,15 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./migrations:/docker-entrypoint-initdb.d:ro 
+
+  redis:
+    image: redis:7
+    container_name: express_redis
+    restart: always
+    ports:
+      - "${REDIS_PORT}:6379"
+    volumes:
+      - redis_data:/data
 volumes:
   db_data:
+  redis_data:
