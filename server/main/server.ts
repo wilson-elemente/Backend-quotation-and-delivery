@@ -20,8 +20,12 @@ app.use((err: any, _req: express.Request, res: express.Response, _next: express.
   res.status(500).json({ message: 'Error interno' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor listo en http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor listo en http://localhost:${PORT}`);
+  });
+}
 
-export { app, container }; // Export app and container for testing or further configuration
+
+export default app;

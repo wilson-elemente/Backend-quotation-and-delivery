@@ -1,6 +1,6 @@
 
 import request from 'supertest';
-import { app } from '../main/server';
+import app  from '../main/server';
 
 describe('HU2 – Shipping Quote Flow', () => {
   const timestamp = Date.now();
