@@ -12,11 +12,16 @@ import { Server as IOServer } from 'socket.io';
 import { createAdapter }      from '@socket.io/redis-adapter';
 import { createClient }       from 'redis';
 import { container } from 'tsyringe';
-
+import cors from 'cors';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 
 // HTTP server and Socket.io setup
 const httpServer = http.createServer(app);
