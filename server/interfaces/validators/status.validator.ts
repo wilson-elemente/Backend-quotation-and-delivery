@@ -4,7 +4,7 @@ export const statusValidationRules = [
   body('status')
     .isString().withMessage('status must be a string')
     .notEmpty().withMessage('status is required')
-    .isIn(['Pendiente', 'En tránsito', 'Entregado', 'Cancelado'])
+    .isIn(['Pendiente', 'En tránsito', 'Entregado', 'Cancelado', 'En espera'])
       .withMessage('status must be one of: pending, in_transit, delivered, cancelled'),
   
   body('comment')

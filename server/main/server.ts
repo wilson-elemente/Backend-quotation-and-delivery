@@ -71,7 +71,7 @@ app.use((err: any, _req: express.Request, res: express.Response, _next: express.
 });
 
 if (require.main === module) {
-  app.listen(PORT, () => {
+  httpServer.listen(PORT, () => {
     console.log(`Servidor listo en http://localhost:${PORT}`);
   });
 }
